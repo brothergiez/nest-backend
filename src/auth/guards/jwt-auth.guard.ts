@@ -16,7 +16,7 @@ export class JwtAuthGuard implements CanActivate {
     const token = this.extractTokenFromHeader(request);
     
     if (!token) {
-      throw new UnauthorizedException('Token tidak ditemukan');
+      throw new UnauthorizedException('Unauthorized! Token not found');
     }
 
     try {
@@ -26,7 +26,7 @@ export class JwtAuthGuard implements CanActivate {
         email: payload.email,
       };
     } catch {
-      throw new UnauthorizedException('Token tidak valid');
+      throw new UnauthorizedException('Invalid Token');
     }
 
     return true;
