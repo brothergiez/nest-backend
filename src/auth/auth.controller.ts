@@ -13,7 +13,6 @@ export class AuthController {
     
     @Body() loginRequest: LoginRequest
   ): Promise<LoginResponse> {
-    console.log(LoginRequest.schema);
     return this.authService.login(loginRequest)
   }
 

@@ -15,12 +15,10 @@ export class CustomJoiValidationPipe implements PipeTransform {
     const { error, value: validatedValue } = schema.validate(value, { abortEarly: false });
 
     if (error) {
-      console.log(error)
       const formatted = error.details.map(err => ({
         field: err.path.join('.'),
         message: err.message,
       }));
-      console.log(formatted)
 
       throw new BadRequestException({
         statusCode: 400,
