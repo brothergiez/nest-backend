@@ -5,23 +5,23 @@
 - Installed Mysql on your machine
 
 # Installation
-1. Clone the repository:
+### 1. Clone the repository:
 ```bash
 git clone https://github.com/brothergiez/nest-backend.git
 cd nest-backend
 ```
 
 
-2. Install Dependencies
+### 2. Install Dependencies
 ```sh
 npm install
 ```
 
-3. Configure .env
+### 3. Configure .env
 ```bash
 cp .env.example .env
 ```
-### Env details
+Env details
 ```env
 # Database URI
 DATABASE_URL="mysql://user:password@localhost:3306/nest-backend"
@@ -34,7 +34,8 @@ JWT_EXPIRES_IN=1d
 APP_PORT=3000
 ```
 
-4. Setup the database
+### 4. Setup the database
+
 Create a database named `nest-backend`, or you can adjust the database name according to your configuration in the .env file, and then run this command below:
 
 ```bash
