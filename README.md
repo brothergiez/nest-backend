@@ -272,8 +272,11 @@ Invalid Token
 Common error responses:
 
 `400 Bad Request` - Validation errors
+
 `401 Unauthorized` - Invalid/missing token
+
 `404 Not Found` - Resource not found
+
 `500 Internal Server Error` - Server errors
 
 
