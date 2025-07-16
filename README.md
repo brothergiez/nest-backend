@@ -88,21 +88,21 @@ curl -X POST http://localhost:3000/auth/register \
 Response Success:
 ```json
 {
-	"success": true,
-	"message": "Registration successful",
-	"data": {
-		"id": "240417b1-4f2f-4378-a98f-1b2c3e92e759",
-		"email": "budi@example.com"
-	}
+  "success": true,
+  "message": "Registration successful",
+  "data": {
+    "id": "240417b1-4f2f-4378-a98f-1b2c3e92e759",
+    "email": "budi@example.com"
+  }
 }
 ```
 
 Response Failed:
 ```json
 {
-	"message": "Email already exists",
-	"error": "Conflict",
-	"statusCode": 409
+  "message": "Email already exists",
+  "error": "Conflict",
+  "statusCode": 409
 }
 ```
 
@@ -119,20 +119,20 @@ curl -X POST http://localhost:3000/auth/login \
 Response Success:
 ```json
 {
-	"success": true,
-	"message": "Login successful",
-	"data": {
-		"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJzdWIiOiI5MDVjM2U3YS0yMTQ2LTQ2MzgtOTE4Ny1jZDQwZTNiOWFkZmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE3NTI2OTQyNTAsImV4cCI6MTc1Mjc4MDY1MH0.1bJYJSq_CdYcs2Mjs58AmDu5QZOyM-ku8W4Ly36ALIc"
-	}
+  "success": true,
+  "message": "Login successful",
+  "data": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJzdWIiOiI5MDVjM2U3YS0yMTQ2LTQ2MzgtOTE4Ny1jZDQwZTNiOWFkZmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE3NTI2OTQyNTAsImV4cCI6MTc1Mjc4MDY1MH0.1bJYJSq_CdYcs2Mjs58AmDu5QZOyM-ku8W4Ly36ALIc"
+  }
 }
 ```
 
 Response Failed
 ```json
 {
-	"message": "Username or Password did not match!",
-	"error": "Unauthorized",
-	"statusCode": 401
+  "message": "Username or Password did not match!",
+  "error": "Unauthorized",
+  "statusCode": 401
 }
 ```
 
@@ -150,29 +150,29 @@ curl -X POST http://localhost:3000/transactions/process \
 Response Success:
 ```json
 {
-	"success": true,
-	"message": "Transaction created successfully",
-	"data": {
-		"id": "8c11a57a-a0b1-4d34-a794-e642208467c1",
-		"user_id": "905c3e7a-2146-4638-9187-cd40e3b9adfc",
-		"amount": "151.00",
-		"created_at": "2025-07-16T19:34:11.580Z",
-		"updated_at": "2025-07-16T19:34:11.580Z"
-	}
+  "success": true,
+  "message": "Transaction created successfully",
+  "data": {
+    "id": "8c11a57a-a0b1-4d34-a794-e642208467c1",
+    "user_id": "905c3e7a-2146-4638-9187-cd40e3b9adfc",
+    "amount": "151.00",
+    "created_at": "2025-07-16T19:34:11.580Z",
+    "updated_at": "2025-07-16T19:34:11.580Z"
+  }
 }
 ```
 
 Response Failed
 ```json
 {
-	"statusCode": 400,
-	"message": [
-		{
-			"field": "amount",
-			"message": "\"amount\" is not allowed to be empty"
-		}
-	],
-	"error": "Bad Request"
+  "statusCode": 400,
+  "message": [
+    {
+      "field": "amount",
+      "message": "\"amount\" is not allowed to be empty"
+    }
+  ],
+  "error": "Bad Request"
 }
 ```
 
@@ -189,24 +189,24 @@ curl -X POST http://localhost:3000/transactions/process/{TRANSACTION_ID} \
 Response Success
 ```json
 {
-	"success": true,
-	"message": "Transaction updated successfully",
-	"data": {
-		"id": "9f07c5b8-b04c-4065-af28-83b2ea3b1b01",
-		"user_id": "905c3e7a-2146-4638-9187-cd40e3b9adfc",
-		"amount": "21.00",
-		"created_at": "2025-07-16T19:35:18.839Z",
-		"updated_at": "2025-07-16T19:43:45.057Z"
-	}
+  "success": true,
+  "message": "Transaction updated successfully",
+  "data": {
+    "id": "9f07c5b8-b04c-4065-af28-83b2ea3b1b01",
+    "user_id": "905c3e7a-2146-4638-9187-cd40e3b9adfc",
+    "amount": "21.00",
+    "created_at": "2025-07-16T19:35:18.839Z",
+    "updated_at": "2025-07-16T19:43:45.057Z"
+  }
 }
 ```
 
 Response Failed
 ```json
 {
-	"message": "Transaction not found",
-	"error": "Not Found",
-	"statusCode": 404
+  "message": "Transaction not found",
+  "error": "Not Found",
+  "statusCode": 404
 }
 ```
 
@@ -219,24 +219,24 @@ curl -X GET http://localhost:3000/transactions \
 Response Success
 ```json
 {
-	"success": true,
-	"message": "Transactions retrieved successfully",
-	"data": [
-		{
-			"id": "72f878c7-af32-4b7d-8970-fb2800c6bfd4",
-			"user_id": "905c3e7a-2146-4638-9187-cd40e3b9adfc",
-			"amount": "151.00",
-			"created_at": "2025-07-16T19:41:07.489Z",
-			"updated_at": "2025-07-16T19:41:07.489Z"
-		},
-		{
-			"id": "9f07c5b8-b04c-4065-af28-83b2ea3b1b01",
-			"user_id": "905c3e7a-2146-4638-9187-cd40e3b9adfc",
-			"amount": "21.00",
-			"created_at": "2025-07-16T19:35:18.839Z",
-			"updated_at": "2025-07-16T19:43:45.057Z"
-		}
-	]
+  "success": true,
+  "message": "Transactions retrieved successfully",
+  "data": [
+    {
+      "id": "72f878c7-af32-4b7d-8970-fb2800c6bfd4",
+      "user_id": "905c3e7a-2146-4638-9187-cd40e3b9adfc",
+      "amount": "151.00",
+      "created_at": "2025-07-16T19:41:07.489Z",
+      "updated_at": "2025-07-16T19:41:07.489Z"
+    },
+    {
+      "id": "9f07c5b8-b04c-4065-af28-83b2ea3b1b01",
+      "user_id": "905c3e7a-2146-4638-9187-cd40e3b9adfc",
+      "amount": "21.00",
+      "created_at": "2025-07-16T19:35:18.839Z",
+      "updated_at": "2025-07-16T19:43:45.057Z"
+    }
+  ]
 }
 ```
 
@@ -245,18 +245,18 @@ Response Success
 Missing Token Header 
 ```json
 {
-	"message": "Unauthorized! Token not found",
-	"error": "Unauthorized",
-	"statusCode": 401
+  "message": "Unauthorized! Token not found",
+  "error": "Unauthorized",
+  "statusCode": 401
 }
 ```
 
 Invalid Token
 ```json
 {
-	"message": "Invalid Token",
-	"error": "Unauthorized",
-	"statusCode": 401
+  "message": "Invalid Token",
+  "error": "Unauthorized",
+  "statusCode": 401
 }
 ```
 
